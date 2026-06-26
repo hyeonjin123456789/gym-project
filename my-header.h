@@ -2,7 +2,7 @@
 #include <time.h>
 
 int machine_num = 26;
-struct tm tm;
+struct tm tm; // 타임 구조체
 
 void excel();
 
@@ -39,7 +39,7 @@ void gym()
     printf("------------------------------------------------------------------------------------------------------------------\n");
 }
 
-void main_category()
+void main_category() // 예약 운동기구 번호 입력 변수
 {
     printf("[원하는 운동기구를 선택하시오] -0번은 예약 취소-\n>> ");
     scanf("%d",&machine_num);
@@ -57,7 +57,7 @@ void main_category()
 
 
 
-void excel() {
+void excel() { // 예약 현황표 출력
     printf("----------------------------------------------\n");
     printf("| %-12s | %-12s | %-12s |\n", "machine_num", "classid", "time");
     printf("----------------------------------------------\n");
@@ -74,18 +74,18 @@ void excel() {
     }
 }
 
-void textcolor(int colorNum)
+void textcolor(int colorNum) // 색 변환 함수
 {
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), colorNum);
 }
 
-void input_time()
+void input_time() // 시간 입력 함수
 {
     printf("[사용 시간을 입력하시오(단위:분)]\n>> ");
     scanf("%d", &inf[machine_num][1]);
 }
 
-enum ColorType{
+enum ColorType{ // 색 enum
 BLACK,
 darkBLUE,
 DarkGreen,
@@ -103,7 +103,7 @@ PURPLE,
 YELLOW,
 WHITE
 } COLOR;
-void idreg(int machine_num){
+void idreg(int machine_num){ // ID 입력 함수
     
     do{
         printf("학번을 입력해주세요. (예: 1101)\n");
@@ -112,7 +112,7 @@ void idreg(int machine_num){
     
 }
 
-void timenow(){
+void timenow(){ // 현재 시간 갱신 변수
         time_t t = time(NULL);
         localtime_s(&tm, &t);
 }
