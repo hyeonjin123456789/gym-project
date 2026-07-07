@@ -43,6 +43,7 @@ void main_category() // 예약 운동기구 번호 입력 변수
 {
     printf("[원하는 운동기구를 선택하시오] -0번은 예약 취소-\n>> ");
     scanf("%d",&machine_num);
+    if(machine_num < 1 || machine_num > 26) main_category();
     if(machine_num == 0){
         printf("[예약취소할 운동기구를 선택하시오]\n");
         scanf("%d", &machine_num);
@@ -103,6 +104,7 @@ PURPLE,
 YELLOW,
 WHITE
 } COLOR;
+
 void idreg(int machine_num){ // ID 입력 함수
     
     do{

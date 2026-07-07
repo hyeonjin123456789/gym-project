@@ -22,12 +22,12 @@ int main(int argc, char const *argv[])
 
         idreg(machine_num);
 
-        do
+        do // 입력조건이 완료될 때까지 반복
         {
             input_time();
         } while(inf[machine_num][1] < 1);
 
-        T[machine_num][0] = tm.tm_hour * 60 + tm.tm_min;
+        T[machine_num][0] = tm.tm_hour * 60 + tm.tm_min; // 현재시간을 분으로 변환
         printf("%d님 \n", inf[machine_num][1]);
         printf("| %d:%d ~ %d:%d %d번 예약되었습니다 |\n", T[machine_num][0] / 60, T[machine_num][0] % 60, (T[machine_num][0] + inf[machine_num][1]) / 60, (T[machine_num][0] + inf[machine_num][1]) % 60, machine_num);
     }
